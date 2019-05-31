@@ -3,12 +3,27 @@
  */
 package bitmap.transformer;
 
-public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        // Read in the bmp file
+        BufferedImage img = null;
+        try {
+            img = ImageIO.read(new File("yellow_tiger_cat.bmp"));
+            System.out.println("Read file good!");
+        } catch (IOException e) {
+            System.out.println("Failed to open image");
+            System.out.println(e);
+        }
+
+        // Instantiate the bmp image
+        Bitmap bitmap = new Bitmap(img);
+
+
     }
 }
