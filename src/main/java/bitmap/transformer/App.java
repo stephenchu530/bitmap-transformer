@@ -6,12 +6,12 @@ package bitmap.transformer;
 public class App {
     public static void main(String[] args) {
         // Instantiate the bmp image
-        Bitmap bitmap = new Bitmap("java_clr_hori.bmp");
+        Bitmap bitmap = new Bitmap(args[0]);
 
         // Transform image
         bitmap.crazy();
 
         // Write out image
-        bitmap.save("image.bmp");
+        bitmap.save(args[1]);
     }
 }
