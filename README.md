@@ -5,7 +5,7 @@ This program reads in bmp file, transforms it, then saves it to a file.
 
 ## Usage
 ```
- $ bitchange <src file> <dest file> <transform>
+ $ ./gradlew run --args <src file> <dest file> <transform>
 ```
 
 ## Contributors
