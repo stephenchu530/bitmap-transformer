@@ -20,4 +20,18 @@ public class Bitmap {
         this.imageData = img;
     }
 
+    public void darken() {
+        int rgb;
+
+        for (int h = 1; h < this.height; h++) {
+            for (int w = 1; w < this.width; w++) {
+                rgb = this.imageData.getRGB(w, h) / 2;
+                this.imageData.setRGB(w, h, rgb);
+            }
+        }
+    }
+
+    public BufferedImage getImageData() {
+        return this.imageData;
+    }
 }

@@ -24,6 +24,15 @@ public class App {
         // Instantiate the bmp image
         Bitmap bitmap = new Bitmap(img);
 
+        bitmap.darken();
 
+        try {
+            boolean success;
+            success = ImageIO.write(bitmap.getImageData(), "gif", new File("image.bmp"));
+            System.out.println("Success status " + success);
+        } catch (IOException e) {
+            System.out.println("ERROR SAVING!");
+            System.out.println(e);
+        }
     }
 }
