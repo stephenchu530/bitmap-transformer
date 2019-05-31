@@ -9,7 +9,24 @@ public class App {
         Bitmap bitmap = new Bitmap(args[0]);
 
         // Transform image
-        bitmap.crazy();
+        if (args.length > 2)
+        switch(args[2]) {
+            case "crazy":
+                bitmap.crazy();
+                break;
+            case "light":
+                bitmap.light();
+                break;
+            case "invert":
+                bitmap.invert();
+                break;
+            case "vflip":
+                bitmap.vflip();
+                break;
+            case "hflip":
+                bitmap.hflip();
+                break;
+        }
 
         // Write out image
         bitmap.save(args[1]);
