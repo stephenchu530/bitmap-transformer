@@ -4,11 +4,14 @@
 package bitmap.transformer;
 
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
-
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        // Instantiate the bmp image
+        Bitmap bitmap = new Bitmap(args[0]);
+
+        // Transform image
+        bitmap.crazy();
+
+        // Write out image
+        bitmap.save(args[1]);
     }
 }

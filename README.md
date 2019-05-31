@@ -5,8 +5,9 @@ This program reads in bmp file, transforms it, then saves it to a file.
 
 ## Usage
 ```
- $ ./gradlew run --args <src file> <dest file> <transform>
+ $ ./gradlew run --args '<src file> <dest file> <transform>'
 ```
+*Transforms coming soon! Currently defaults to crazy(tm) transform*
 
 ## Contributors
 * Paula Thomas, [Paula9t9](https://github.com/Paula9t9)
