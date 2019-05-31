@@ -7,7 +7,18 @@ This program reads in bmp file, transforms it, then saves it to a file.
 ```
  $ ./gradlew run --args '<src file> <dest file> <transform>'
 ```
-*Transforms coming soon! Currently defaults to crazy(tm) transform*
+example:
+```
+ $ ./gradlew run --args 'image1.bmp image2.bmp invert'
+```
+
+## Transforms List
+* crazy - does something crazy to the pixel colors
+* light - lightens the pixel colors
+* invert - inverts the pixel color
+* vflip - vertically flips the image
+* hflip - horizontally flips the image
+
 
 ## Contributors
 * Paula Thomas, [Paula9t9](https://github.com/Paula9t9)
