@@ -14,7 +14,7 @@ public class App {
         // Read in the bmp file
         BufferedImage img = null;
         try {
-            img = ImageIO.read(new File("yellow_tiger_cat.bmp"));
+            img = ImageIO.read(new File("java_clr_hori.bmp"));
             System.out.println("Read file good!");
         } catch (IOException e) {
             System.out.println("Failed to open image");
@@ -24,12 +24,10 @@ public class App {
         // Instantiate the bmp image
         Bitmap bitmap = new Bitmap(img);
 
-        bitmap.darken();
+        bitmap.crazy();
 
         try {
-            boolean success;
-            success = ImageIO.write(bitmap.getImageData(), "gif", new File("image.bmp"));
-            System.out.println("Success status " + success);
+            ImageIO.write(bitmap.getImageData(), "bmp", new File("image.bmp"));
         } catch (IOException e) {
             System.out.println("ERROR SAVING!");
             System.out.println(e);

@@ -20,7 +20,7 @@ public class Bitmap {
         this.imageData = img;
     }
 
-    public void darken() {
+    public void crazy() {
         int rgb;
 
         for (int h = 1; h < this.height; h++) {
