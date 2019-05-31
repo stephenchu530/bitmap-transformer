@@ -3,34 +3,15 @@
  */
 package bitmap.transformer;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
 public class App {
     public static void main(String[] args) {
-
-        // Read in the bmp file
-        BufferedImage img = null;
-        try {
-            img = ImageIO.read(new File("java_clr_hori.bmp"));
-            System.out.println("Read file good!");
-        } catch (IOException e) {
-            System.out.println("Failed to open image");
-            System.out.println(e);
-        }
-
         // Instantiate the bmp image
-        Bitmap bitmap = new Bitmap(img);
+        Bitmap bitmap = new Bitmap("java_clr_hori.bmp");
 
+        // Transform image
         bitmap.crazy();
 
-        try {
-            ImageIO.write(bitmap.getImageData(), "bmp", new File("image.bmp"));
-        } catch (IOException e) {
-            System.out.println("ERROR SAVING!");
-            System.out.println(e);
-        }
+        // Write out image
+        bitmap.save("image.bmp");
     }
 }

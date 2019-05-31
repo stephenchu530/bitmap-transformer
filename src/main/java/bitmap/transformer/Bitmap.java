@@ -14,10 +14,10 @@ public class Bitmap {
     BufferedImage imageData;
 
     // Constructor
-    public Bitmap (BufferedImage img) {
-        this.height = img.getHeight();
-        this.width = img.getWidth();
-        this.imageData = img;
+    public Bitmap (String filePath) {
+        this.imageData = read(filePath);
+        this.height = this.imageData.getHeight();
+        this.width = this.imageData.getWidth();
     }
 
     public void crazy() {
@@ -31,7 +31,23 @@ public class Bitmap {
         }
     }
 
-    public BufferedImage getImageData() {
-        return this.imageData;
+    public BufferedImage read(String filePath) {
+        BufferedImage img = null;
+        try {
+            img = ImageIO.read(new File(filePath));
+        } catch (IOException e) {
+            System.out.println("Failed to open image");
+            System.out.println(e);
+        }
+        return img;
+    }
+
+    public void save(String filePath) {
+        try {
+            ImageIO.write(this.imageData, "bmp", new File(filePath));
+        } catch (IOException e) {
+            System.out.println("ERROR SAVING!");
+            System.out.println(e);
+        }
     }
 }
